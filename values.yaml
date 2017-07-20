@@ -1,0 +1,37 @@
+# Default values for zipkin.
+collector:
+  replicaCount: 4
+  maxReplicaCount: 4
+  targetCPUUtilizationPercentage: 80
+  imageVersion: 1.28.1
+  sampleRate: 0.0000001
+  probeStartupDelay: 150
+  queryPort: 9411
+  resources:
+    ramMb: 900
+    cpuRequest: 150m
+    cpuLimit: 200m
+
+ui:
+  replicaCount: 1
+  imageVersion: 1.28.1
+  probeStartupDelay: 150
+  queryPort: 9411
+  resources:
+    ramMb: 900
+    cpuRequest: 150m
+    cpuLimit: 200m
+
+storageMethod: cassandra
+
+cassandra:
+  username: placeholder
+  password: placeholder
+  contactPoints: placeholder
+  localdc: placeholder
+  ensureSchema: false
+
+node:
+  cpus: 2
+
+

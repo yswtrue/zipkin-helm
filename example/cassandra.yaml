@@ -1,0 +1,6 @@
+cassandra:
+  username: zipkinuser
+  password: my-super-secret-password
+  contactPoints: cassandra-1.me.com,cassandra-2.me.com
+  localdc: thisdc
+
