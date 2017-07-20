@@ -31,6 +31,18 @@ dependencies:
     cpuRequest: 150m
     cpuLimit: 200m
 
+configmap:
+  name: zipkin
+  contactPoints:
+    name: zipkin
+    key: cassandra.contactpoints
+  username:
+    name: zipkin
+    key: cassandra.username
+  localdc:
+    name: zipkin
+    key: cassandra.localdc
+
 ingress:
   class: "istio"
   host: placeholder
