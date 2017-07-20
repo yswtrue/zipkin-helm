@@ -29,3 +29,14 @@ configmap:
     name: cassandra # use this notation if you want to reuse values from existing configmaps, this takes precedence over the .cassandra field
     key: local.dc
 ```
+
+## Releasing
+
+### Package the new version
+
+1. Change the version in the `Chart.yaml` file to the new version
+2. `helm package -d docs/ .`
+3. `helm repo index docs --url https://financial-times.github.io/zipkin-helm/docs/`
+4. Commit the changes
+5. Make a new release on github
+6. `git commit -m 'rebuild pages' --allow-empty && git push`
