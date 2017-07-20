@@ -19,7 +19,6 @@ spec:
         release: {{ .Release.Name }}
     spec:
       containers:
-        {{}}
         - name: {{ .Chart.Name }}
           image: "docker.io/openzipkin/zipkin:{{ .Values.ui.imageVersion }}"
           ports:
