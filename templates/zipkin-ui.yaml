@@ -64,7 +64,7 @@ spec:
             - name: CASSANDRA_CONTACT_POINTS
               value: "{{ .Values.cassandra.contactPoints }}"
             - name: CASSANDRA_LOCAL_DC
-              value: {{ .Values.cassandra.localdc }}
+              value: "{{ .Values.cassandra.localdc }}"
             - name: CASSANDRA_ENSURE_SCHEMA
-              value: "false"
+              value: "{{ .Values.cassandra.ensureSchema }}"
 {{ end }}

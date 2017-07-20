@@ -22,6 +22,22 @@ ui:
     cpuRequest: 150m
     cpuLimit: 200m
 
+dependencies:
+  enabled: true
+  cron: "0 22 * * *"
+  imageVersion: 1.6.1
+  resources:
+    ramMb: 900
+    cpuRequest: 150m
+    cpuLimit: 200m
+
+ingress:
+  class: "istio"
+  host: placeholder
+  path: /.*
+  serviceName: zipkin-ui
+  servicePort: 9411
+
 storageMethod: cassandra
 
 cassandra:
