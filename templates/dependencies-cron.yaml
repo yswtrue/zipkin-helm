@@ -50,7 +50,7 @@ spec:
               value: "false"
 {{ end }}
             - name: JAVA_OPTS
-              value: "-XX:ConcGCThreads={{ .Values.node.cpus }} -XX:ParallelGCThreads={{ .Values.node.cpus }} -Djava.util.concurrent.ForkJoinPool.common.parallelism={{ .Values.node.cpus }} -Xms{{ .Values.dependencies.resources.ramMb }}M -Xmx{{ .Values.dependencies.resources.ramMb }}M -XX:+UseG1GC -server"
+              value: "-XX:ConcGCThreads={{ .Values.node.cpus }} -XX:ParallelGCThreads={{ .Values.node.cpus }} -Djava.util.concurrent.ForkJoinPool.common.parallelism={{ .Values.node.cpus }} -Xms{{ .Values.dependencies.resources.javaOptsHeap }}M -Xmx{{ .Values.dependencies.resources.javaOptsHeap }}M -XX:+UseG1GC -server"
             resources:
               limits:
                 cpu: "{{ .Values.dependencies.resources.cpuLimit }}"

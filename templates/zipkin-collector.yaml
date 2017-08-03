@@ -48,7 +48,7 @@ spec:
             - name: QUERY_PORT
               value: "{{ .Values.collector.queryPort }}"
             - name: JAVA_OPTS
-              value: "-XX:ConcGCThreads={{ .Values.node.cpus }} -XX:ParallelGCThreads={{ .Values.node.cpus }} -Djava.util.concurrent.ForkJoinPool.common.parallelism={{ .Values.node.cpus }} -Xms{{ .Values.collector.resources.ramMb }}M -Xmx{{ .Values.collector.resources.ramMb }}M -XX:+UseG1GC -server"
+              value: "-XX:ConcGCThreads={{ .Values.node.cpus }} -XX:ParallelGCThreads={{ .Values.node.cpus }} -Djava.util.concurrent.ForkJoinPool.common.parallelism={{ .Values.node.cpus }} -Xms{{ .Values.collector.resources.javaOptsHeap }}M -Xmx{{ .Values.collector.resources.javaOptsHeap }}M -XX:+UseG1GC -server"
             - name: COLLECTOR_SAMPLE_RATE
               value: "{{ .Values.collector.sampleRate }}"
             - name: QUERY_ENABLED

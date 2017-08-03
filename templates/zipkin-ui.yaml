@@ -48,7 +48,7 @@ spec:
             - name: QUERY_PORT
               value: "{{ .Values.ui.queryPort }}"
             - name: JAVA_OPTS
-              value: "-XX:ConcGCThreads={{ .Values.node.cpus }} -XX:ParallelGCThreads={{ .Values.node.cpus }} -Djava.util.concurrent.ForkJoinPool.common.parallelism={{ .Values.node.cpus }} -Xms{{ .Values.ui.resources.ramMb }}M -Xmx{{ .Values.ui.resources.ramMb }}M -XX:+UseG1GC -server"
+              value: "-XX:ConcGCThreads={{ .Values.node.cpus }} -XX:ParallelGCThreads={{ .Values.node.cpus }} -Djava.util.concurrent.ForkJoinPool.common.parallelism={{ .Values.node.cpus }} -Xms{{ .Values.ui.resources.javaOptsHeap }}M -Xmx{{ .Values.ui.resources.javaOptsHeap }}M -XX:+UseG1GC -server"
             - name: QUERY_ENABLED
               value: "true"
             - name: STORAGE_TYPE
