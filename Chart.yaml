@@ -1,4 +1,4 @@
 apiVersion: v1
 description: Zipkin distributed tracing
 name: zipkin-helm
-version: 0.3.2
+version: 0.4.0
