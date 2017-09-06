@@ -2,7 +2,15 @@ apiVersion: v1
 entries:
   zipkin-helm:
   - apiVersion: v1
-    created: 2017-08-03T17:37:42.188232962+01:00
+    created: 2017-09-06T16:16:37.275486501+01:00
+    description: Zipkin distributed tracing
+    digest: e2fa16f0f7cab0bfa71387938ad89c871cd0905f2d7860818b24dfae85f2f476
+    name: zipkin-helm
+    urls:
+    - https://financial-times.github.io/zipkin-helm/docs/zipkin-helm-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v1
+    created: 2017-09-06T16:16:37.272107693+01:00
     description: Zipkin distributed tracing
     digest: 05d19c305d86bee89f17f63de3f8596fe5c15af868fc8d0ef872e70a45e8a54c
     name: zipkin-helm
@@ -10,7 +18,7 @@ entries:
     - https://financial-times.github.io/zipkin-helm/docs/zipkin-helm-0.3.2.tgz
     version: 0.3.2
   - apiVersion: v1
-    created: 2017-08-03T17:37:42.185855642+01:00
+    created: 2017-09-06T16:16:37.269679178+01:00
     description: Zipkin distributed tracing
     digest: bd4d94e1d71c267762d1a0f2d92095befc5d3613db62bad5dcefad405d454d1a
     name: zipkin-helm
@@ -18,7 +26,7 @@ entries:
     - https://financial-times.github.io/zipkin-helm/docs/zipkin-helm-0.3.1.tgz
     version: 0.3.1
   - apiVersion: v1
-    created: 2017-08-03T17:37:42.184678757+01:00
+    created: 2017-09-06T16:16:37.268541141+01:00
     description: Zipkin distributed tracing
     digest: d06140fcfac9816316de44626dfa1e9ae627a3bf3fcc5d657ed8781052a52753
     name: zipkin-helm
@@ -26,7 +34,7 @@ entries:
     - https://financial-times.github.io/zipkin-helm/docs/zipkin-helm-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v1
-    created: 2017-08-03T17:37:42.183826827+01:00
+    created: 2017-09-06T16:16:37.267745389+01:00
     description: Zipkin distributed tracing
     digest: 5a33ee9e2a54579478c975238dfc250676a8bd6eb8d4d7cd93d04da37eb07f54
     name: zipkin-helm
@@ -34,7 +42,7 @@ entries:
     - https://financial-times.github.io/zipkin-helm/docs/zipkin-helm-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v1
-    created: 2017-08-03T17:37:42.183356609+01:00
+    created: 2017-09-06T16:16:37.266624761+01:00
     description: Zipkin distributed tracing
     digest: 758a27f7f52df7e4b17b441a19855130ad643ff003b3d5ef7912f6b2415641e7
     name: zipkin-helm
@@ -42,11 +50,11 @@ entries:
     - https://financial-times.github.io/zipkin-helm/docs/zipkin-helm-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: 2017-08-03T17:37:42.183014126+01:00
+    created: 2017-09-06T16:16:37.265872028+01:00
     description: Zipkin distributed tracing
     digest: cb5ef222f689edfe46293cb5b4bddea46084b8f24f4b17d188b993f587c5dcb4
     name: zipkin-helm
     urls:
     - https://financial-times.github.io/zipkin-helm/docs/zipkin-helm-0.1.0.tgz
     version: 0.1.0
-generated: 2017-08-03T17:37:42.182694836+01:00
+generated: 2017-09-06T16:16:37.264914563+01:00
