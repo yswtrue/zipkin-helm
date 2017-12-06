@@ -53,7 +53,7 @@ spec:
               value: "true"
             - name: STORAGE_TYPE
               value: "{{ .Values.storageMethod }}"
-{{if eq .Values.storageMethod "cassandra"}}
+{{if eq .Values.storageMethod "cassandra3"}}
             - name: CASSANDRA_USERNAME
               valueFrom:
                 configMapKeyRef:
@@ -75,5 +75,5 @@ spec:
                   name: zipkin
                   key: cassandra.password
             - name: CASSANDRA_ENSURE_SCHEMA
-              value: "true"
+              value: "false"
 {{ end }}

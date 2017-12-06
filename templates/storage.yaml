@@ -53,10 +53,12 @@ spec:
       initContainers:
       - name: volume-mount-hack
         image: busybox
-        command: ["sh", "-c", "chmod -R 777 /cassandra/data"]
+        command: ["sh", "-c", "chmod -R 777 /cassandra/"]
         volumeMounts:
         - name: data-storage
           mountPath: /cassandra/data
+      imagePullSecrets:
+        - name: nexusregistrykey
       containers:
       - name: zipkin-cassandra
         image: {{ .Values.cassandra.image }}:{{ .Values.cassandra.tag }}

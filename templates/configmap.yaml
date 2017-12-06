@@ -7,7 +7,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 data:
-{{if eq .Values.storageMethod "cassandra"}}
+{{if eq .Values.storageMethod "cassandra3"}}
 
 {{if eq .Values.configmap.username.name .Values.configmap.name}}
   cassandra.username: "{{ .Values.cassandra.username }}"

@@ -2,30 +2,33 @@
 apiVersion: batch/v2alpha1
 kind: CronJob
 metadata:
-  name: zipkin-dependencies
+  name: zipkin-dependencies-gen
   labels:
-    app: zipkin-collector
+    app: zipkin-dependencies-gen
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
   schedule: "{{ .Values.dependencies.cron }}"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
   jobTemplate:
     spec:
       template:
         metadata:
           labels:
-            app: zipkin-dependencies
+            app: zipkin-dependencies-gen
             release: {{ .Release.Name }}
         spec:
           restartPolicy: Never
           containers:
-          - name: zipkin-dependencies
+          - name: zipkin-dependencies-gen
             image: "openzipkin/zipkin-dependencies:{{ .Values.dependencies.imageVersion }}"
             env:
             - name: STORAGE_TYPE
               value: "{{ .Values.storageMethod }}"
-{{if eq .Values.storageMethod "cassandra"}}
+{{if eq .Values.storageMethod "cassandra3"}}
             - name: CASSANDRA_USERNAME
               valueFrom:
                 configMapKeyRef:

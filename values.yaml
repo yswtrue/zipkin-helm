@@ -1,11 +1,11 @@
 # Default values for zipkin.
 collector:
   replicaCount: 2
-  maxReplicaCount: 2
+  maxReplicaCount: 5
   targetCPUUtilizationPercentage: 80
-  imageVersion: 1.31.1
+  imageVersion: 2
   sampleRate: 0.1
-  probeStartupDelay: 100
+  probeStartupDelay: 200
   queryPort: 9411
   resources:
     ramMb: 900
@@ -15,8 +15,8 @@ collector:
 
 ui:
   replicaCount: 1
-  imageVersion: 1.31.1
-  probeStartupDelay: 100
+  imageVersion: 2
+  probeStartupDelay: 300
   queryPort: 9411
   resources:
     ramMb: 900
@@ -27,7 +27,7 @@ ui:
 dependencies:
   enabled: true
   cron: "0 22 * * *"
-  imageVersion: 1.9.0
+  imageVersion: 1.11.0
   resources:
     ramMb: 900
     javaOptsHeap: 700
@@ -53,7 +53,7 @@ ingress:
   serviceName: zipkin-ui
   servicePort: 9411
 
-storageMethod: cassandra
+storageMethod: cassandra3
 
 cassandra:
   username: zipkin
@@ -63,11 +63,11 @@ cassandra:
   ensureSchema: false
   image: openzipkin/zipkin-cassandra
   probeStartupDelay: 120
-  tag: 1
+  tag: 2
   replicas: 1
   pvSize: 20Gi
   resources:
-    ramMb: 3000
+    ramMb: 3500
     cpuRequest: 200m
     cpuLimit: 500m
 
