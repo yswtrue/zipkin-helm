@@ -1,8 +1,8 @@
 {{if eq .Values.dependencies.enabled true}}
-apiVersion: batch/v2alpha1
+apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: zipkin-dependencies-gen
+  name: {{ .Release.Name }}-zipkin-dependencies-gen
   labels:
     app: zipkin-dependencies-gen
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}

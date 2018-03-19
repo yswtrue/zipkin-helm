@@ -1,6 +1,6 @@
 # Default values for zipkin.
 collector:
-  replicaCount: 2
+  replicaCount: 3
   maxReplicaCount: 5
   targetCPUUtilizationPercentage: 80
   imageVersion: 2
@@ -29,7 +29,7 @@ dependencies:
   cron: "0 22 * * *"
   imageVersion: 1.11.0
   resources:
-    ramMb: 900
+    ramMb: 1100
     javaOptsHeap: 700
     cpuRequest: 150m
     cpuLimit: 200m

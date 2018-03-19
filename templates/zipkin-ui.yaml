@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: zipkin-ui
+  name: {{ .Release.Name }}-zipkin-ui
   labels:
-    app: zipkin-ui
+    app: {{ .Release.Name }}-zipkin-ui
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}

@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: zipkin-collector
+  name: {{ .Release.Name }}-zipkin-collector
   labels:
     app: zipkin-collector
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
