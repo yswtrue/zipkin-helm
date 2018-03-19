@@ -66,6 +66,6 @@ This can happen for some reason when cassandra comes up before any of the collec
 Try restarting the pods:
 
 ```
-kubectl get po -l app=zipkin-collector
-kubectl get po -l app=zipkin-ui
+kubectl delete po -l app=zipkin-collector
+kubectl delete po -l app=zipkin-ui
 ```
