@@ -58,6 +58,10 @@ spec:
         release: {{ .Release.Name }}
         chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     spec:
+      {{- if .Values.cassandra.tolerations }}
+      tolerations:
+{{ toYaml .Values.cassandra.tolerations | indent 8 }}
+      {{- end }}
       initContainers:
       - name: volume-mount-hack
         image: busybox
