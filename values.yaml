@@ -47,9 +47,9 @@ configmap:
     key: cassandra.localdc
 
 ingress:
-  class: "istio"
+  class: "nginx"
   host: placeholder
-  path: /.*
+  path: /
   serviceName: zipkin-ui
   servicePort: 9411
 
@@ -66,6 +66,7 @@ cassandra:
   tag: 2
   replicas: 1
   pvSize: 20Gi
+  storageProvider: "aws"
   resources:
     ramMb: 3500
     cpuRequest: 200m
