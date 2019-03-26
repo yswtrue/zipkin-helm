@@ -8,31 +8,32 @@ collector:
   probeStartupDelay: 200
   queryPort: 9411
   resources:
-    ramMb: 900
-    javaOptsHeap: 700
+    ramMb: 1100
+    javaOptsHeap: 1000
     cpuRequest: 80m
     cpuLimit: 300m
 
 ui:
   replicaCount: 1
   imageVersion: 2
-  probeStartupDelay: 300
+  probeStartupDelay: 200
   queryPort: 9411
   resources:
     ramMb: 900
     javaOptsHeap: 700
     cpuRequest: 150m
-    cpuLimit: 300m
+    cpuLimit: 600m
 
 dependencies:
   enabled: true
   cron: "0 22 * * *"
   imageVersion: 1.11.0
   resources:
-    ramMb: 1100
-    javaOptsHeap: 700
-    cpuRequest: 150m
-    cpuLimit: 200m
+    ramMbLimits: 4000
+    ramMbRequests: 4000
+    javaOptsHeap: 3500
+    cpuRequest: 1
+    cpuLimit: 1
 
 configmap:
   name: zipkin-storage
@@ -47,9 +48,8 @@ configmap:
     key: cassandra.localdc
 
 ingress:
-  class: "istio"
-  host: placeholder
-  path: /.*
+  class: "nginx"
+  path: /
   serviceName: zipkin-ui
   servicePort: 9411
 
@@ -67,7 +67,8 @@ cassandra:
   replicas: 1
   pvSize: 20Gi
   resources:
-    ramMb: 3500
+    ramMbRequest: 3000
+    ramMbLimit: 8000
     cpuRequest: 200m
     cpuLimit: 500m
 

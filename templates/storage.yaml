@@ -91,10 +91,10 @@ spec:
         resources:
           limits:
             cpu: "{{ .Values.cassandra.resources.cpuLimit }}"
-            memory: "{{ .Values.cassandra.resources.ramMb }}Mi" # TODO fix this, this field id mi but the value is mb. There will be slight wastage
+            memory: "{{ .Values.cassandra.resources.ramMbLimit }}Mi"
           requests:
             cpu: "{{ .Values.cassandra.resources.cpuRequest }}"
-            memory: "{{ .Values.cassandra.resources.ramMb }}Mi" # TODO fix this, this field id mi but the value is mb. There will be slight wastage
+            memory: "{{ .Values.cassandra.resources.ramMbRequest }}Mi"
         volumeMounts:
           - name: data-storage
             mountPath: /cassandra/data
