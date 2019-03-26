@@ -57,8 +57,8 @@ spec:
             resources:
               limits:
                 cpu: "{{ .Values.dependencies.resources.cpuLimit }}"
-                memory: "{{ .Values.dependencies.resources.ramMb }}Mi" # TODO fix this, this field id mi but the value is mb. There will be slight wastage
+                memory: "{{ .Values.dependencies.resources.ramMbLimits }}Mi"
               requests:
                 cpu: "{{ .Values.dependencies.resources.cpuRequest }}"
-                memory: "{{ .Values.dependencies.resources.ramMb }}Mi" # TODO fix this, this field id mi but the value is mb. There will be slight wastage
+                memory: "{{ .Values.dependencies.resources.ramMbRequests }}Mi"
 {{ end }}
