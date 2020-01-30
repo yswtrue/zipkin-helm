@@ -8,7 +8,9 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
   annotations:
-      kubernetes.io/ingress.class: "{{ .Values.ingress.class }}"
+      {{- range $key, $value := .Values.controller.service.annotations }}
+      {{ $key }}: {{ $value | quote }}
+      {{- end }}
 spec:
   rules:
   - host: {{ .Values.ingress.host }}
