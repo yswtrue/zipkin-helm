@@ -9,6 +9,9 @@ metadata:
     heritage: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.collector.replicaCount }}
+  selector:
+    matchLabels:
+      app: zipkin-collector
   strategy:
     rollingUpdate:
       maxUnavailable: 0

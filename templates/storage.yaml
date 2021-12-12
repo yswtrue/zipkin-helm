@@ -28,7 +28,7 @@ parameters:
   type: gp2
 
 ---
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: {{ .Release.Name }}-zipkin-cassandra
@@ -40,6 +40,9 @@ metadata:
 spec:
   serviceName: zipkin-cassandra
   replicas: {{ .Values.cassandra.replicas }}
+  selector:
+    matchLabels:
+      app: zipkin-cassandra
   volumeClaimTemplates:
   - metadata:
       name: data-storage
