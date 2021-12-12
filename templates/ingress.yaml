@@ -8,7 +8,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
   annotations:
-      {{- range $key, $value := .Values.controller.service.annotations }}
+      {{- range $key, $value := .Values.ingress.annotations }}
       {{ $key }}: {{ $value | quote }}
       {{- end }}
 spec:

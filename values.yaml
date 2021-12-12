@@ -52,6 +52,8 @@ ingress:
   path: /
   serviceName: zipkin-ui
   servicePort: 9411
+  host: zipkin.example.com
+  annotations: {}
 
 storageMethod: cassandra3
 
@@ -74,5 +76,3 @@ cassandra:
 
 node:
   cpus: 2
-
-
