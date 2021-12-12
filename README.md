@@ -5,11 +5,11 @@ A helm chart for zipkin
 
 ### Adding the repo 
 
-`helm repo add zipkin-helm https://financial-times.github.io/zipkin-helm/docs`
+`helm repo add zipkin-helm https://yswtrue.github.io/zipkin-helm/docs`
 
 ### Installing
 
-`helm install -f my-cassandra-config.yaml https://financial-times.github.io/zipkin-helm/docs/zipkin-helm-0.1.1.tgz`
+`helm install -f my-cassandra-config.yaml https://yswtrue.github.io/zipkin-helm/docs/zipkin-helm-0.1.1.tgz`
 
 ## values
 
@@ -36,7 +36,7 @@ configmap:
 
 1. Change the version in the `Chart.yaml` file to the new version
 2. `helm package -d docs/ .`
-3. `helm repo index docs --url https://financial-times.github.io/zipkin-helm/docs/`
+3. `helm repo index docs --url https://yswtrue.github.io/zipkin-helm/docs/`
 4. Commit the changes
 5. Make a new release on github
 6. `git commit -m 'rebuild pages' --allow-empty && git push`
